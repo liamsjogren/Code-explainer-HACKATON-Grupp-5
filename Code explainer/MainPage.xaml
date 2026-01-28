@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Code_explainer.MainPage"
+    BackgroundColor="White">
+
+    <Grid Padding="16" RowDefinitions="Auto,Auto,*,Auto" RowSpacing="12">
+
+        <Grid Grid.Row="0" ColumnDefinitions="*,Auto">
+            <Label Text="CodeXplainer"
+                   FontSize="44"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="Black"/>
+
+            <Button x:Name="MenuButton"
+                    Grid.Column="1"
+                    Text="≡"
+                    FontSize="24"
+                    WidthRequest="44"
+                    HeightRequest="44"
+                    BorderColor="Black"
+                    BorderWidth="2"
+                    BackgroundColor="White"
+                    TextColor="Black"
+                    Clicked="OnMenuClicked"/>
+        </Grid>
+
+        <HorizontalStackLayout Grid.Row="1" Spacing="20">
+            <HorizontalStackLayout>
+                <CheckBox x:Name="CheckControl"/>
+                <Label Text="kontrollstruktur"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout>
+                <CheckBox x:Name="CheckLoop"/>
+                <Label Text="loopar"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout>
+                <CheckBox x:Name="CheckMethod"/>
+                <Label Text="metoder"/>
+            </HorizontalStackLayout>
+        </HorizontalStackLayout>
+
+        <Grid Grid.Row="2">
+            <Border Stroke="Black" StrokeThickness="3" Padding="10">
+                <Grid>
+                    <Editor x:Name="CodeEditor"
+                            Placeholder="Write code here..."
+                            FontFamily="Consolas"/>
+
+                    <Button x:Name="PlayButton"
+                            Text="▶"
+                            WidthRequest="50"
+                            HeightRequest="50"
+                            HorizontalOptions="End"
+                            VerticalOptions="End"
+                            Clicked="OnPlayClicked"/>
+                </Grid>
+            </Border>
+        </Grid>
+
+        <Label Grid.Row="3"
+               x:Name="StatusLabel"
+               Text="Ready"
+               HorizontalOptions="Center"/>
+    </Grid>
+</ContentPage>
